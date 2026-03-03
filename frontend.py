@@ -2,8 +2,7 @@ import streamlit as st
 import requests
 
 # The URL of your backend API (change this to your deployed URL later)
-API_URL = "http://localhost:8000/recommend"
-
+API_URL = "https://shl-recommender-rmc3.onrender.com/recommend"
 st.set_page_config(page_title="SHL Assessment Recommender", layout="centered")
 
 st.image("https://www.shl.com/assets/logos/Logo-SHL-1200.png", width=150)
@@ -36,4 +35,5 @@ if st.button("Get Recommendations"):
                 else:
                     st.error(f"API Error: {response.status_code} - {response.text}")
             except Exception as e:
+
                 st.error(f"Failed to connect to the backend API. Ensure app.py is running. Error: {e}")
